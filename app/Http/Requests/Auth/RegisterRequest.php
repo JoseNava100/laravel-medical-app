@@ -23,7 +23,6 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:100',
-            'username' => 'required|string|max:50|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ];
@@ -32,7 +31,6 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
          return [
-            'username.unique' => 'The username already exists.',
             'email.unique' => 'The email already exists.',
             'password.confirmed' => 'Passwords do not match or Password do not confirmed.',
          ];
