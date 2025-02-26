@@ -38,4 +38,26 @@ class UpdatePatientRequest extends FormRequest
             'gender' => 'in:Male,Female,Other',
         ];
     }
+
+    /**
+     * Get the custom messages for the validator.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.string' => 'The name must be a text string',
+            'name.max' => 'The name must not exceed 255 characters',
+            'email.email' => 'Please enter a valid email',
+            'email.unique' => 'This email is already registered',
+            'phone.string' => 'The phone must be a text string',
+            'birthdate.date' => 'Date of birth must be valid',
+            'weight.string' => 'The weight must be a text string',
+            'height.string' => 'The height must be a text string',
+            'allergies.string' => 'Allergies must be a text string',
+            'Nationality.string' => 'Nationality must be a text string',
+            'gender.in' => 'Gender must be Male, Female or Other',
+        ];
+    }
 }

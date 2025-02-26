@@ -34,4 +34,27 @@ class StorePatientRequest extends FormRequest
             'gender' => 'required|in:Male,Female,Other',
         ];
     }
+
+    /**
+     * Get the custom messages for the validator.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'The patients name is required',
+            'email.required' => 'Email is required',
+            'email.email' => 'Please enter a valid email',
+            'email.unique' => 'This email is already registered',
+            'phone.required' => 'The telephone number is required',
+            'birthdate.required' => 'The date of birth is mandatory',
+            'weight.required' => 'Weight is mandatory',
+            'height.required' => 'Height is mandatory',
+            'allergies.required' => 'Allergies are mandatory',
+            'Nationality.required' => 'Nationality is mandatory',
+            'gender.required' => 'Gender is mandatory',
+            'gender.in' => 'The gender must be Male, Female or Other',
+        ];
+    }
 }
