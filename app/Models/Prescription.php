@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Prescription extends Model
 {
     protected $fillable = [
-        'medical_record_id',
+        'appointment_id',
         'medication',
         'dosage',
         'instructions',
@@ -16,8 +16,8 @@ class Prescription extends Model
 
     protected $table = 'prescriptions';
 
-    public function medicalRecord(): BelongsTo
+    public function appointment(): BelongsTo
     {
-        return $this->belongsTo(MedicalRecord::class);
+        return $this->belongsTo(Appointment::class);
     }
 }
