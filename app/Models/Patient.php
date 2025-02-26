@@ -12,7 +12,11 @@ class Patient extends Model
         'email',
         'phone',
         'birthdate',
-        'address',
+        'weight',
+        'height',
+        'allergies',
+        'Nationality',
+        'gender',
     ];
 
     protected $table = 'patients';

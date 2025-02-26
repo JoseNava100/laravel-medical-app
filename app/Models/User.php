@@ -26,9 +26,12 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'role',
         'phone',
-        'profile_photo_path',
+        'photo_path',
+        'specialty',
+        'license_number',
+        'address',
+        'gender',
     ];
 
     /**
@@ -52,10 +55,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function doctor(): HasOne
-    {
-        return $this->hasOne(Doctor::class);
     }
 }

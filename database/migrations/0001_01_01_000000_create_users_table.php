@@ -18,9 +18,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['doctor', 'admin'])->default('doctor');
             $table->string('phone')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('photo_path', 2048)->nullable();
+            $table->string('specialty')->nullable();
+            $table->string('license_number')->unique()->nullable();
+            $table->text('address')->nullable();
+            $table->enum('gender', ['Male', 'Female', 'Other']);
             $table->rememberToken();
             $table->timestamps();
         });

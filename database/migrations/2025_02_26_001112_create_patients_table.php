@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->date('birthdate')->nullable();
-            $table->text('address')->nullable();
+            $table->string('phone');
+            $table->date('birthdate');
+            $table->string('weight');
+            $table->string('height');
+            $table->string('allergies');
+            $table->string('Nationality');
+            $table->enum('gender', ['Male', 'Female', 'Other']);
             $table->timestamps();
         });
     }
