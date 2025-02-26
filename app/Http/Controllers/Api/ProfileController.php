@@ -44,7 +44,8 @@ class ProfileController extends Controller
 
         if (!$user) {
             return response()->json([
-                'message' => 'Unauthenticated user'
+                'message' => 'Unauthenticated user',
+                'status' => 401,
             ], 401);
         }
 
@@ -71,6 +72,7 @@ class ProfileController extends Controller
         return response()->json([
             'message' => 'Profile updated successfully',
             'user' => $user,
+            'status' => 200,
         ], 200);
     }
 
